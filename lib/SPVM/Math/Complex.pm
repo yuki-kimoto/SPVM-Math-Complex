@@ -6,7 +6,7 @@ our $VERSION = '0.01';
 
 =head1 NAME
 
-SPVM::Math::Complex - Math Functions
+SPVM::Math::Complex - Complex Math Functions
 
 =head1 CAUTHION
 
@@ -16,15 +16,23 @@ B<The SPVM::Math::Complex module depends on the L<SPVM> module. The L<SPVM> modu
 
 =head2 SPVM
 
-  use Math;
+  use Math::Complex;
   
-  my $sin = Math->sin(Math->PI / 4);
+  my $z1 = Math::Complex->complex(0.5, 0.25);
+  my $csin = Math::Complex->csin($z1);
+  my $ccos = Math::Complex->ccos($z1);
+
+  my $z1 = Math::Complex->complexf(0.5f, 0.25f);
+  my $csinf = Math::Complex->csinf($z1);
+  my $ccosf = Math::Complex->ccosf($z1);
 
 =head2 Perl
   
-  use SPVM 'Math';
+  use SPVM 'Math::Complex';
   
-  my $sin = SPVM::Math::Complex->sin(SPVM::Math::Complex->PI / 4);
+  my $z1 = SPVM::Math::Complex->complex(0.5, 0.25);
+  my $csin = SPVM::Math::Complex->csin($z1);
+  my $ccos = SPVM::Math::Complex->ccos($z1);
 
 =head1 DESCRIPTION
 
