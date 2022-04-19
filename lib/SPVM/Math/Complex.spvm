@@ -1,4 +1,6 @@
-class Math : precompile {
+class Math::Complex : precompile {
+  use Math;
+  
   use Complex_2f;
   use Complex_2d;
   

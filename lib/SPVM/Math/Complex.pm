@@ -1,4 +1,4 @@
-package SPVM::Math;
+package SPVM::Math::Complex;
 
 our $VERSION = '0.09';
 
@@ -6,11 +6,11 @@ our $VERSION = '0.09';
 
 =head1 NAME
 
-SPVM::Math - Math Functions
+SPVM::Math::Complex - Math Functions
 
 =head1 CAUTHION
 
-B<The SPVM::Math module depends on the L<SPVM> module. The L<SPVM> module is yet before 1.0 released. The beta tests are doing. There will be a little reasonable changes yet.>
+B<The SPVM::Math::Complex module depends on the L<SPVM> module. The L<SPVM> module is yet before 1.0 released. The beta tests are doing. There will be a little reasonable changes yet.>
 
 =head1 SYNOPSYS
 
@@ -24,7 +24,7 @@ B<The SPVM::Math module depends on the L<SPVM> module. The L<SPVM> module is yet
   
   use SPVM 'Math';
   
-  my $sin = SPVM::Math->sin(SPVM::Math->PI / 4);
+  my $sin = SPVM::Math::Complex->sin(SPVM::Math::Complex->PI / 4);
 
 =head1 DESCRIPTION
 

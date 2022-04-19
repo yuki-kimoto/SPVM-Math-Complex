@@ -23,19 +23,19 @@ use SPVM::Builder::Util::API;
       $minor_version = $2;
     }
     if ($major_version < 12) {
-      warn "SPVM::Math only supports FreeBSD 12+ because old FreeBSD doesn't support C99 math functions correctly. The current FreeBSD version is $major_version.$minor_version";
+      warn "SPVM::Math::Complex only supports FreeBSD 12+ because old FreeBSD doesn't support C99 math functions correctly. The current FreeBSD version is $major_version.$minor_version";
       die "OS unsupported\n";
     }
   }
 }
 
 WriteMakefile(
-    NAME              => 'SPVM::Math',
-    VERSION_FROM      => 'lib/SPVM/Math.pm', # finds $VERSION
+    NAME              => 'SPVM::Math::Complex',
+    VERSION_FROM      => 'lib/SPVM/Math/Complex.pm', # finds $VERSION
     PREREQ_PM         => {}, # e.g., Module::Name => 1.1
     LICENSE           => 'perl_5',
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
-      (ABSTRACT_FROM  => 'lib/SPVM/Math.pm', # retrieve abstract from module
+      (ABSTRACT_FROM  => 'lib/SPVM/Math/Complex.pm', # retrieve abstract from module
        AUTHOR         => 'Yuki Kimoto<kimoto.yuki@gmail.com>') : ()),
     test => {TESTS => 't/*.t'},
     clean => {FILES => ".spvm_build"},
@@ -44,8 +44,8 @@ WriteMakefile(
         resources => {
             repository => {
                 type => 'git',
-                url  => 'https://github.com/yuki-kimoto/Perl-SPVM-Math.git',
-                web  => 'https://github.com/yuki-kimoto/Perl-SPVM-Math',
+                url  => 'https://github.com/yuki-kimoto/SPVM-Math-Complex.git',
+                web  => 'https://github.com/yuki-kimoto/SPVM-Math-Complex',
             },
         },
     },
@@ -61,10 +61,10 @@ sub MY::postamble {
   my $make_rule = '';
   
   # Native compile make rule
-  $make_rule .= SPVM::Builder::Util::API::create_make_rule_native('Math');
+  $make_rule .= SPVM::Builder::Util::API::create_make_rule_native('Math::Complex');
 
   # Native compile make rule
-  $make_rule .= SPVM::Builder::Util::API::create_make_rule_precompile('Math');
+  $make_rule .= SPVM::Builder::Util::API::create_make_rule_precompile('Math::Complex');
   
   return $make_rule;
 }
