@@ -23,7 +23,7 @@ use SPVM::Builder::Util::API;
       $minor_version = $2;
     }
     if ($major_version < 12) {
-      warn "SPVM::Math::Complex only supports FreeBSD 12+ because old FreeBSD doesn't support C99 math functions correctly. The current FreeBSD version is $major_version.$minor_version";
+      warn "SPVM::Math::Complex only supports FreeBSD 12+ because old FreeBSD doesn't support C99 complex math functions correctly. The current FreeBSD version is $major_version.$minor_version";
       die "OS unsupported\n";
     }
   }
@@ -51,7 +51,7 @@ WriteMakefile(
     },
     # SPVM::Builder::Util::API is needed for Makefile.PL
     CONFIGURE_REQUIRES => {
-        'SPVM'              => '0.9506',
+        'SPVM'              => '0.9511',
     },
 );
 
